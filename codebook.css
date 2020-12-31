@@ -1,0 +1,74 @@
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 20px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 105%; color: black; border-bottom: 1px dashed #050505;}
+h4 {font-size: 100%; font-weight:bold}
+img {float:left; clear:left; margin-top:15px; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { float:left; margin-top:15px; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#myUL li a {
+
+  font-size: 14px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+
+}
+
+#myInput {
+  width: 50%; /* Half-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 6px 20px 6px 40px; /* Add some padding */
+  border: 1px solid #000000; /* Add a black border */
+  margin-bottom: 8px; /* Add some space below the input */
+  margin-top: 12px;
+  font-style: italic;
+}
+h2 {
+  color: white;
+  font-size: 125%;
+}
+h1 {
+  color: black;
+  font-size: 150%;
+}
+.header {
+  overflow: hidden;
+  background-color: #d3d6db;
+  padding: 20px 10px;
+  outline: 3px solid black;
+}
+.description {
+  font-style: italic;
+}
