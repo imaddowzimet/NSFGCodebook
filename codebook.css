@@ -48,10 +48,10 @@ table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
 
 #myInput {
   width: 50%; /* Half-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 6px 20px 6px 40px; /* Add some padding */
-  border: 1px solid #000000; /* Add a black border */
-  margin-bottom: 8px; /* Add some space below the input */
+  font-size: 18px; /* Increase font-size */
+  padding: 6px 20px 6px 10px; /* Add some padding */
+  border: 6px solid #000000; /* Add a black border */
+  margin-bottom: 4px; /* Add some space below the input */
   margin-top: 12px;
   font-style: italic;
 }
@@ -71,4 +71,7 @@ h1 {
 }
 .description {
   font-style: italic;
+}
+::placeholder {
+  color: #393d3a;
 }
