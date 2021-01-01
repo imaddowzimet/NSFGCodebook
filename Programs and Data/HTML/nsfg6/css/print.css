@@ -1,0 +1,42 @@
+.noprint {
+display: none;
+}
+
+.thinlines {
+		border-right: #777777 2pt solid; 
+		border-top: #777777 2pt solid; 
+		border-left: #777777 2pt solid; 
+		border-bottom: #777777 2pt solid;
+		font-size: smaller;
+	}
+
+.field {
+	 font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+     font-size: .9em;
+     vertical-align: top; 
+}
+
+.fieldname1 {
+     text-align: right;
+     font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+     font-size: .9em;
+     vertical-align: top; 
+}
+
+.fieldname {
+     text-align: center;
+     color: #3D4242;
+     font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+     font-size: .9em;
+     font-weight: bold;
+     vertical-align: top; 
+}
+	
+	
+	.cat-label {
+	border-bottom: 1px solid #000000;
+	}
+	
+	#skip {
+		display: none;
+	}

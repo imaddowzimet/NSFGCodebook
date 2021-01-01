@@ -1,0 +1,115 @@
+body {
+background-color: url(/webdocs/images/blue-bar.gif);
+background-repeat: repeat-y;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-left: 0px;
+padding-top: 0px;
+padding-right: 0px;
+padding-bottom: 0px;
+}
+
+#skip a, #skip a:hover, #skip a:visited 
+{ 
+position:absolute; 
+left:0px; 
+top:-500px; 
+width:1px; 
+height:1px; 
+overflow:hidden;
+} 
+
+h1 {
+   padding-top: 5px;
+   margin-top: 5px;
+   font-size: 1.5em; 
+}
+
+h2 {
+   font-size: 1.3em; 
+}
+
+h3 {
+   font-size: 1.1em; 
+}
+
+h4 {
+   font-size: 1em; 
+}
+
+h5 {
+   font-size: .8em;
+}
+
+p {
+   color: #3D4242;
+   padding-left: 10px;
+   font-size: 1.0em;
+}
+
+td {
+    font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+    font-size: .9em;	
+ 	color: #3D4242;
+}
+
+.thinlines {
+		border-right: #777777 2pt solid; 
+		border-top: #777777 2pt solid; 
+		border-left: #777777 2pt solid; 
+		border-bottom: #777777 2pt solid;
+		font-size: smaller;
+	}
+		
+.title {
+		BACKGROUND-COLOR: #eeeeee
+}
+
+th {
+   font-size: 1.3em;  	
+   color: #3D4242; 
+}
+
+.white {
+     background-color: #ffffff; 
+}
+
+.view-strong {
+	 font-family: verdana;
+     text-align: left;
+     font-size: 1.1em;
+     font-weight: bold
+}
+
+.field {
+	 font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+     font-size: .9em;
+     vertical-align: top; 
+}
+
+.fieldname1 {
+     text-align: right;
+     font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+     font-size: .9em;
+     vertical-align: top; 
+}
+
+.fieldname {
+     text-align: center;
+     color: #3D4242;
+     font-family: tahoma, verdana, arial, helvetica, geneva, sans-serif;
+     font-size: .9em;
+     font-weight: bold;
+     vertical-align: top; 
+}
+
+.cat-label {
+	border-bottom: 1px solid #000000;
+	}
+	
+.underline {
+	text-decoration: underline;  	
+}
+	
