@@ -35,6 +35,33 @@ render_fun_mixed <- function(varname) {
 
 purrr::walk(mixedcasevars, render_fun_mixed)
 
+# Pregnancy
+alldata <- readRDS("Data/completeNSFGmetadata.rds") %>% filter(type == "Pregnancy")
+alldata %>% distinct(varname) %>% pull() %>% as.character() -> allvars
+allvars_lower<- tolower(allvars)
+alldata %>% filter(varname %in% allvars[duplicated(allvars_lower)]) %>% 
+  mutate(lowervar = tolower(varname)) %>% pull(lowervar) %>% unique() -> mixedcasevars
+
+render_fun <- function(varname) {
+  rmarkdown::render(
+    input = "Template_Pregnancy.rmd",
+    params = list(varname = varname),
+    output_file = glue::glue("HTML_Var_Pages/pregnancy_{varname}.html")
+  )
+}
+
+
+render_fun_mixed <- function(varname) {
+  rmarkdown::render(
+    input = "Template_Pregnancy_MixedCase.rmd",
+    params = list(varname = varname),
+    output_file = glue::glue("HTML_Var_Pages/pregnancy_{varname}.html")
+  )
+}
+purrr::walk(allvars, render_fun)
+purrr::walk(mixedcasevars, render_fun_mixed)
+
+
 
 
 

@@ -1,0 +1,392 @@
+---
+title: "NSFG Codebook for variable `r params$varname`"
+params: 
+  varname: CASEID
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    css: webdoc.css
+
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+alldata <- readRDS("Data/completeNSFGmetadata.rds") %>% filter(varname == params$varname)
+
+```
+
+
+All Waves
+=====================================
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Pregnancy, 2017-2019
+
+```{r include= F}
+year1 <- "201719"
+type1 <- "Pregnancy"
+extract <- filter(alldata, year == year1 & type == type1)
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes    <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`    
+**Description/Question:** `r description`    
+**Type:** `r type`   
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+**Universe:** `r universe`    
+**Notes:** `r notes`   
+
+### Pregnancy, 2015-2017
+
+```{r include= F}
+year1 <- "201517"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+### Pregnancy, 2013-2015
+```{r include= F}
+year1 <- "201315"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+### Pregnancy, 2011-2013
+```{r include= F}
+year1 <- "201113"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+### Pregnancy, 2006-2010
+```{r include= F}
+year1 <- "200610"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+### Pregnancy, 2002
+```{r include= F}
+year1 <- "2002"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+2017-2019 only
+=====================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Pregnancy, 2017-2019
+
+```{r include= F}
+year1 <- "201719"
+type1 <- "Pregnancy"
+extract <- filter(alldata, year == year1 & type == type1)
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes    <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`    
+**Description/Question:** `r description`    
+**Type:** `r type` 
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+  
+**Universe:** `r universe`    
+**Notes:** `r notes` 
+
+2015-2017 only
+=====================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Pregnancy, 2015-2017
+
+```{r include= F}
+year1 <- "201517"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+  
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+2013-2015 only
+=====================================
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Pregnancy, 2013-2015
+```{r include= F}
+year1 <- "201315"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+  
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+2011-2013 only
+=====================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+### Pregnancy, 2011-2013
+```{r include= F}
+year1 <- "201113"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+  
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+2006-2010 only
+=====================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+### Pregnancy, 2006-2010
+```{r include= F}
+year1 <- "200610"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+  
+**Universe:** `r universe`    
+**Notes:** `r notes` 
+
+2002 only
+=====================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+### Pregnancy, 2002
+```{r include= F}
+year1 <- "2002"
+type1 <- "Pregnancy"
+extract <- alldata %>% filter(year==year1 & type == type1) 
+variable <- ifelse(dim(extract)[1] == 0, "Variable does not exist in this survey/wave", extract$varname)
+description <- ifelse(dim(extract)[1] == 0, "", extract$question)
+universe <- ifelse(dim(extract)[1] == 0, "", extract$universe)
+notes <- ifelse(dim(extract)[1] == 0 | is.na(extract$notes), "", extract$notes)
+type     <- ifelse(dim(extract)[1] == 0, "", extract$vartype)
+```
+
+**Variable:** `r variable`  
+**Description/Question** `r description`  
+**Type:** `r type` 
+
+```{r echo = F}
+if (dim(extract)[1] != 0) {
+
+
+DT::datatable(extract$table[[1]], options = list(pageLength = 50, lengthChange = FALSE,
+  bPaginate = FALSE, dom = 't', columnDefs = list(list(className = 'dt-left', targets = "_all"))
+), rownames = F) %>% DT::formatStyle(names(extract$table[[1]]),lineHeight='70%') 
+}
+```
+  
+**Universe:** `r universe`    
+**Notes:** `r notes`  
+
+
